@@ -35,9 +35,33 @@ class DefaultController extends Controller
 		}
 
 		$todo->setCompleted(true);
+
 		/** @var \Doctrine\ORM\EntityManager $em */
 		$em = $this->container->get('doctrine')->getEntityManager();
+
 		$em->persist($todo);
+		$em->flush();
+
+		return $this->redirect($this->generateUrl('todo_homepage'));
+	}
+
+	public function deleteAction($id)
+	{
+		/** @var \FCPHP\TodoBundle\Entity\TodoRepository $repo */
+		$repo = $this->container->get('doctrine')->getRepository('TodoBundle:Todo');
+
+		/** @var \FCPHP\TodoBundle\Entity\Todo $todo */
+		$todo = $repo->find($id);
+
+		if(!$todo)
+		{
+			throw new NotFoundHttpException('That todo was not found.');
+		}
+
+		/** @var \Doctrine\ORM\EntityManager $em */
+		$em = $this->container->get('doctrine')->getEntityManager();
+
+		$em->remove($todo);
 		$em->flush();
 
 		return $this->redirect($this->generateUrl('todo_homepage'));
