@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+	<title>Todoster</title>
+	{% javascripts '@TodoBundle/Resources/public/js/bootstrap.js' %}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+
+	{% stylesheets '@TodoBundle/Resources/public/css/bootstrap.css' '@TodoBundle/Resources/public/css/bootstrap-responsive.css' %}
+	<link rel="stylesheet" href="{{ asset_url }}">
+	{% endstylesheets %}
+</head>
+<body>
+<div class="container">
+	<h1>Todoster</h1>
+	<hr />
+
+	{% block content %}{% endblock %}
+</div>
+</body>
 </html>

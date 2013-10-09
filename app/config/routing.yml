@@ -1,0 +1,4 @@
+todo:
+    resource: "@TodoBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,7 @@
+parameters:
+#    todo.example.class: PCPHP\TodoBundle\Example
+
+services:
+#    todo.example:
+#        class: %todo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
