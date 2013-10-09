@@ -1,0 +1,11 @@
+todo_homepage:
+    pattern:  /
+    defaults: { _controller: TodoBundle:Default:index }
+
+todo_complete:
+    pattern: /todo/complete/{id}
+    defaults: { _controller: TodoBundle:Default:complete }
+
+todo_delete:
+    pattern: /todo/delete/{id}
+    defaults: { _controller: TodoBundle:Default:delete }

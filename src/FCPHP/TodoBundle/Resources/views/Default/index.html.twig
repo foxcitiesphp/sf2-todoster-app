@@ -20,7 +20,7 @@
 			<h2>Past Todos</h2>
 			<ul>
 				{% for todo in completed %}
-					<li style="text-decoration: line-through;">{{ todo.name }} :: <a href="{{ path('todo_delete', {'id': todo.id}) }}" class="btn btn-primary btn-mini btn-danger">Delete</a></li>
+					<li style="text-decoration: line-through;">{{ todo.name }}</li>
 				{% else %}
 					<li>You haven't completed any todos yet... Get to work!</li>
 				{% endfor %}
