@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="span6">
+
+		</div>
+		<div class="span6">
+			<h2>Outstanding Todos</h2>
+
+			<ul>
+			{% for todo in incomplete %}
+				<li>{{ todo.name }} :: <a href="{{ path('todo_complete', {'id': todo.id}) }}" class="btn btn-primary btn-mini">Complete</a> <a href="{{ path('todo_delete', {'id': todo.id}) }}" class="btn btn-primary btn-mini btn-danger">Delete</a></li>
+			{% else %}
+				<li>You don't have any todos yet...</li>
+			{% endfor %}
+			</ul>
+
+			<h2>Past Todos</h2>
+			<ul>
+				{% for todo in completed %}
+					<li style="text-decoration: line-through;">{{ todo.name }} :: <a href="{{ path('todo_delete', {'id': todo.id}) }}" class="btn btn-primary btn-mini btn-danger">Delete</a></li>
+				{% else %}
+					<li>You haven't completed any todos yet... Get to work!</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</div>
+{% endblock %}
