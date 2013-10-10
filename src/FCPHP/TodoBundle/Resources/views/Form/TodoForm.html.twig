@@ -1,0 +1,10 @@
+<h2>New Todo</h2>
+
+<form class="well form-vertical" action="{{ path('todo_homepage') }}" method="post">
+
+	{{ form_errors(todo_form) }}
+	{{ form_widget(todo_form) }}
+
+	<input class="btn btn-success" type="submit" value="Create Todo">
+
+</form>
