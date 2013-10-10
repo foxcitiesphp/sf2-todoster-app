@@ -3,7 +3,7 @@ todo_homepage:
     defaults: { _controller: TodoBundle:Default:index }
 
 todo_complete:
-    pattern: /todo/complete/{id}
+    pattern: /todo/update/{id}
     defaults: { _controller: TodoBundle:Default:complete }
 
 todo_delete:
