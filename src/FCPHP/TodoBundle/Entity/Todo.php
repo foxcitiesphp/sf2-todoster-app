@@ -31,9 +31,9 @@ class Todo
     /**
      * @var boolean
      *
-     * @ORM\Column(name="completed", type="boolean")
+     * @ORM\Column(name="completed", type="boolean", nullable=true)
      */
-    private $completed;
+    private $completed = 0;
 
 
     /**
